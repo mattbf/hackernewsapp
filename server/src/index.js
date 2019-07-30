@@ -15,6 +15,12 @@ const resolvers = {
   Query: {
     info: () => `This is the API of a Hackernews Clone`,
     feed: () => links,
+    link: function(id) {
+      if (!links[id]) {
+        throw new Error('no link with id:' + id)
+      }
+      return "links[id]"
+    }
   },
   Mutation: {
     post: (parent, args) => {
