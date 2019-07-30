@@ -25,6 +25,14 @@ const resolvers = {
       }
       links.push(link)
       return link
+    },
+    updateLink: (parent, args) => {
+      links[args.id] = {
+        id: args.id,
+        description: args.description,
+        url: args.url
+      }
+      return links[args.id]
     }
   },
 }
