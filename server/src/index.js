@@ -33,6 +33,10 @@ const resolvers = {
         url: args.url
       }
       return links[args.id]
+    },
+    deleteLink: (parent, args) => {
+      links.splice(args.id, 1)
+      return links[args.id]
     }
   },
 }
