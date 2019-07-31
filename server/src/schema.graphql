@@ -1,7 +1,7 @@
 type Query {
   info: String!
   # get all links
-  feed: [Link!]!
+  feed(filter: String): [Link!]!
 }
 
 type Mutation {
