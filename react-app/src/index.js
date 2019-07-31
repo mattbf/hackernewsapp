@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './Styles/index.css'
 import App from './Components/App'
-import * as serviceWorker from './serviceWorker';
+import GlobalRouter from './GlobalRouter'
+import { BrowserRouter } from 'react-router-dom'
 
 // 1
 import { ApolloProvider } from 'react-apollo'
@@ -23,9 +24,10 @@ const client = new ApolloClient({
 
 // 4
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <BrowserRouter>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 )
-serviceWorker.unregister();
